@@ -1,7 +1,11 @@
-import random, string
+import random
 letters = "abcdefgilmnoprstuwy"
-numbers = "013579"
-symbols = "-_~"
-chars = letters + letters.upper() + numbers + symbols
-password = "".join(random.choices(chars, k=10))
-print("Here’s your cute password: ", password)
+chars = letters + letters.upper() + "013579" + "-_~"
+length = int(input("Enter password length: "))
+
+print("\nCUTE PASSWORDS")
+print("*" * (length + 10))
+for i in range(3):
+    password = "".join(random.choices(chars, k=length))
+    print("Password", i+1, ":", password)
+print("*" * (length + 10))
